@@ -1,6 +1,6 @@
 import numpy as np
 
-#Convert card string to a value from 0-51
+#convert card name string to a value from 0-51
 def cardNameToInt(name):
     suits = ['c','d','h','s']
     face_cards = {'T':10,'J':11,'Q':12,'K':13,'A':14}
@@ -15,7 +15,7 @@ def cardNameToInt(name):
     
     return suit_value + 4 * (card_num-2)
 
-#generate hands for all the other players in the game
+#generate starting hands for all the other players in the game
 def generatePlayersCards(n_players,available_deck):
     updated_card_deck = available_deck
     np.random.shuffle(updated_card_deck)
