@@ -149,7 +149,7 @@ def fullHouseTie(p1_hand, p2_hand):
     elif triple1_type < triple2_type:
         result = 1
     else:
-        result = onePairTie()
+        result = onePairTie(p1_hand, p2_hand)
     return result
 
 def fourOfAKindTie(p1_hand, p2_hand):
@@ -179,7 +179,7 @@ def fourOfAKindTie(p1_hand, p2_hand):
     elif quartet1_type < quartet2_type:
         result = 1
     else:
-        result = highCardTie()
+        result = highCardTie(p1_hand, p2_hand)
     return result
 
 def straightFlushTie(p1_hand, p2_hand):
