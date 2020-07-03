@@ -17,6 +17,19 @@ aces = [i for i in range(48,52)]
 
 card_nums = [twos,threes,fours,fives,sixes,sevens,eights,nines,tens,jacks,queens,kings,aces]
 
+#convert cards from 0-51 value to thier number/face value
+def cardIntsToCardNums(hand):
+    #list to hold number/face values of cards
+    hand_nums = []
+
+    #convert cards from 0-51 value to thier number/face value
+    for i in range(len(hand)):
+        for j in range(len(card_nums)):
+            if hand[i] in card_nums[j]:
+                hand_nums.append(j+2)
+    
+    return hand_nums
+
 def isFlush(hand):
     #lists with all the cards of each suit
     clubs = [i for i in range(0,52,4)]
@@ -34,14 +47,8 @@ def isFlush(hand):
             return False
     
 def isStraight(hand):
-    #list to hold number/face values of cards
-    player_nums = []
-
-    #convert cards from 0-51 value to thier number/face value
-    for i in range(len(hand)):
-        for j in range(len(card_nums)):
-            if hand[i] in card_nums[j]:
-                player_nums.append(j+2)
+    #convert list of card values to numbers/faces
+    player_nums = cardIntsToCardNums(hand)
     
     #check if the card numbers/faces are consecutive to determine if hand is a straight
     player_nums = np.sort(player_nums)
@@ -100,3 +107,4 @@ def isTwoPair(hand):
         return True
     else:
         return False
+   
