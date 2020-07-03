@@ -59,9 +59,9 @@ def twoPairTie(p1_hand, p2_hand):
     pairs_p2 = []
     for card_num in card_nums:
         if len(np.intersect1d(p1_hand, card_num)) == 2:
-            pairs_p1.append(np.intersect1d(p1_hand, card_num))
+            pairs_p1.append(np.intersect1d(p1_hand, card_num).tolist())
         if len(np.intersect1d(p2_hand, card_num)) == 2:
-            pairs_p2.appened(np.intersect1d(p2_hand, card_num))
+            pairs_p2.append(np.intersect1d(p2_hand, card_num).tolist())
     
     #order the pairs in each list from highest to lowest
     if onePairTie(pairs_p1[0], pairs_p1[1]) != 0:

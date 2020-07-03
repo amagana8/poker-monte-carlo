@@ -52,7 +52,8 @@ def isStraight(hand):
     
     #check if the card numbers/faces are consecutive to determine if hand is a straight
     player_nums = np.sort(player_nums)
-    if player_nums == list(range(np.min(player_nums), np.max(player_nums)+1)):
+    straight = np.array(list(range(np.min(player_nums), np.max(player_nums)+1)))
+    if np.array_equal(player_nums, straight):
         return True
     else: 
         return False
