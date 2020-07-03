@@ -15,8 +15,8 @@ card1 = input("Enter your first card: ")
 card2 = input("Enter your second card: ")
 starting_hand = [card1, card2]
 
-win_prob_20 = monteCarloSims(100, 20, 1, starting_hand)
-win_prob_100 = monteCarloSims(100, 100, 1, starting_hand)
+win_prob_20 = monteCarloSims(100, 20, 3, starting_hand)
+win_prob_100 = monteCarloSims(100, 100, 3, starting_hand)
 mean_20 = np.mean(win_prob_20)
 mean_100 = np.mean(win_prob_100)
 std_20 = np.std(win_prob_20)
