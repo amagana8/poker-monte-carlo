@@ -15,7 +15,7 @@ card1 = input("Enter your first card: ")
 card2 = input("Enter your second card: ")
 starting_hand = [card1, card2]
 
-win_prob_20 = monteCarloSims(100, 20, 3, starting_hand)
+win_prob_25 = monteCarloSims(100, 25, 3, starting_hand)
 win_prob_100 = monteCarloSims(100, 100, 3, starting_hand)
 mean_20 = np.mean(win_prob_20)
 mean_100 = np.mean(win_prob_100)
@@ -23,7 +23,7 @@ std_20 = np.std(win_prob_20)
 std_100 = np.std(win_prob_100)
 
 
-plt.hist(win_prob_20,alpha=0.5, label='20 games')
+plt.hist(win_prob_25,alpha=0.5, label='25 games')
 plt.hist(win_prob_100,alpha=0.5, label='100 games')
 plt.title('Starting Hand ' + str(starting_hand))
 plt.legend(loc='upper left')
