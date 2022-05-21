@@ -43,8 +43,7 @@ def isFlush(hand):
     for suit in suits:
         if len(np.intersect1d(hand, suit)) == 5:
             return True
-        else:
-            return False
+    return False
     
 def isStraight(hand):
     #convert list of card values to numbers/faces
