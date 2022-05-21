@@ -41,7 +41,7 @@ def isFlush(hand):
 
     #check both players' hands for flushes
     for suit in suits:
-        if len(np.intersect1d(hand, suit)) == 5:
+        if len(np.intersect1d(hand, suit)) >= 5:
             return True
     return False
     
